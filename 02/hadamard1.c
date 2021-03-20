@@ -1,7 +1,7 @@
 // Hadamard
 #include <stdio.h>
 #include<stdlib.h>
-#define N 2
+#define N 1000
 
 void print_matrix(int c[N][N]){
 
@@ -16,7 +16,7 @@ void print_matrix(int c[N][N]){
 
 void calculate_hadamard1(int a[N][N], int b[N][N])
 {
-   int c[N][N]; 
+   int32_t c[N][N]; 
 
     for (size_t i = 0; i < N; ++i) {
         for (size_t j = 0; j < N; ++j) {
@@ -29,8 +29,8 @@ void calculate_hadamard1(int a[N][N], int b[N][N])
 
 int main(void){
 
-    int a[N][N];
-    int b[N][N];
+    int32_t a[N][N];
+    int32_t b[N][N];
     
     calculate_hadamard1(a, b);
     

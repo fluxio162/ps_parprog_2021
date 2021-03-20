@@ -26,9 +26,6 @@ module load gcc/8.2.0
 
 #$ -l h_vmem=4G
 
-
-export OMP_NUM_THREADS=1
-export OMP_SCHEDULE=dynamic
-gcc -fopenmp ~/ParalleleProgrammierung/exercise2_1.c -o exercise2_1 && /usr/bin/time -v ./exercise2_1
-gcc -fopenmp ~/ParalleleProgrammierung/exercise2_2.c -o exercise2_2 && /usr/bin/time -v ./exercise2_2
+gcc -fopenmp ~/ParalleleProgrammierung/hadamard1.c -o hadamard1 && /usr/bin/time -v ./hadamard1
+gcc -fopenmp ~/ParalleleProgrammierung/hadamard2.c -o hadamard2 && /usr/bin/time -v ./hadamard2
 
