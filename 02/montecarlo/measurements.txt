@@ -1,0 +1,234 @@
+monte carlo:
+
+sequential:
+
+time: 19.640000 seconds
+        Command being timed: "./mc_seq"
+        User time (seconds): 19.64
+        System time (seconds): 0.00
+        Percent of CPU this job got: 99%
+        Elapsed (wall clock) time (h:mm:ss or m:ss): 0:19.64
+        Average shared text size (kbytes): 0
+        Average unshared data size (kbytes): 0
+        Average stack size (kbytes): 0
+        Average total size (kbytes): 0
+        Maximum resident set size (kbytes): 596
+        Average resident set size (kbytes): 0
+        Major (requiring I/O) page faults: 0
+        Minor (reclaiming a frame) page faults: 196
+        Voluntary context switches: 6
+        Involuntary context switches: 8
+        Swaps: 0
+        File system inputs: 0
+        File system outputs: 16
+        Socket messages sent: 0
+        Socket messages received: 0
+        Signals delivered: 0
+        Page size (bytes): 4096
+        Exit status: 0
+
+
+parallel:
+
+Iterations: 500000000; threads: 1; pi: 3.141588; time: 13.36000
+        Command being timed: "./mc_par"
+        User time (seconds): 13.36
+        System time (seconds): 0.00
+        Percent of CPU this job got: 99%
+        Elapsed (wall clock) time (h:mm:ss or m:ss): 0:13.37
+        Average shared text size (kbytes): 0
+        Average unshared data size (kbytes): 0
+        Average stack size (kbytes): 0
+        Average total size (kbytes): 0
+        Maximum resident set size (kbytes): 744
+        Average resident set size (kbytes): 0
+        Major (requiring I/O) page faults: 0
+        Minor (reclaiming a frame) page faults: 233
+        Voluntary context switches: 8
+        Involuntary context switches: 14
+        Swaps: 0
+        File system inputs: 0
+        File system outputs: 16
+        Socket messages sent: 0
+        Socket messages received: 0
+        Signals delivered: 0
+        Page size (bytes): 4096
+        Exit status: 0
+
+Iterations: 500000000; threads: 2; pi: 3.141556; time: 13.37000
+        Command being timed: "./mc_par"
+        User time (seconds): 13.37
+        System time (seconds): 0.00
+        Percent of CPU this job got: 199%
+        Elapsed (wall clock) time (h:mm:ss or m:ss): 0:06.69
+        Average shared text size (kbytes): 0
+        Average unshared data size (kbytes): 0
+        Average stack size (kbytes): 0
+        Average total size (kbytes): 0
+        Maximum resident set size (kbytes): 752
+        Average resident set size (kbytes): 0
+        Major (requiring I/O) page faults: 0
+        Minor (reclaiming a frame) page faults: 235
+        Voluntary context switches: 8
+        Involuntary context switches: 23
+        Swaps: 0
+        File system inputs: 0
+        File system outputs: 16
+        Socket messages sent: 0
+        Socket messages received: 0
+        Signals delivered: 0
+        Page size (bytes): 4096
+        Exit status: 0
+
+Iterations: 499999998; threads: 3; pi: 3.141579; time: 13.37000
+        Command being timed: "./mc_par"
+        User time (seconds): 13.37
+        System time (seconds): 0.00
+        Percent of CPU this job got: 299%
+        Elapsed (wall clock) time (h:mm:ss or m:ss): 0:04.46
+        Average shared text size (kbytes): 0
+        Average unshared data size (kbytes): 0
+        Average stack size (kbytes): 0
+        Average total size (kbytes): 0
+        Maximum resident set size (kbytes): 760
+        Average resident set size (kbytes): 0
+        Major (requiring I/O) page faults: 0
+        Minor (reclaiming a frame) page faults: 237
+        Voluntary context switches: 11
+        Involuntary context switches: 10
+        Swaps: 0
+        File system inputs: 0
+        File system outputs: 8
+        Socket messages sent: 0
+        Socket messages received: 0
+        Signals delivered: 0
+        Page size (bytes): 4096
+        Exit status: 0
+
+
+Iterations: 500000000; threads: 4; pi: 3.141562; time: 13.39000
+        Command being timed: "./mc_par"
+        User time (seconds): 13.39
+        System time (seconds): 0.00
+        Percent of CPU this job got: 398%
+        Elapsed (wall clock) time (h:mm:ss or m:ss): 0:03.35
+        Average shared text size (kbytes): 0
+        Average unshared data size (kbytes): 0
+        Average stack size (kbytes): 0
+        Average total size (kbytes): 0
+        Maximum resident set size (kbytes): 768
+        Average resident set size (kbytes): 0
+        Major (requiring I/O) page faults: 0
+        Minor (reclaiming a frame) page faults: 240
+        Voluntary context switches: 15
+        Involuntary context switches: 15
+        Swaps: 0
+        File system inputs: 0
+        File system outputs: 8
+        Socket messages sent: 0
+        Socket messages received: 0
+        Signals delivered: 0
+        Page size (bytes): 4096
+        Exit status: 0
+
+Iterations: 500000000; threads: 5; pi: 3.141597; time: 13.37000
+        Command being timed: "./mc_par"
+        User time (seconds): 13.37
+        System time (seconds): 0.00
+        Percent of CPU this job got: 499%
+        Elapsed (wall clock) time (h:mm:ss or m:ss): 0:02.67
+        Average shared text size (kbytes): 0
+        Average unshared data size (kbytes): 0
+        Average stack size (kbytes): 0
+        Average total size (kbytes): 0
+        Maximum resident set size (kbytes): 776
+        Average resident set size (kbytes): 0
+        Major (requiring I/O) page faults: 0
+        Minor (reclaiming a frame) page faults: 241
+        Voluntary context switches: 14
+        Involuntary context switches: 36
+        Swaps: 0
+        File system inputs: 0
+        File system outputs: 8
+        Socket messages sent: 0
+        Socket messages received: 0
+        Signals delivered: 0
+        Page size (bytes): 4096
+        Exit status: 0
+
+
+Iterations: 499999998; threads: 6; pi: 3.141504; time: 13.38000
+        Command being timed: "./mc_par"
+        User time (seconds): 13.38
+        System time (seconds): 0.00
+        Percent of CPU this job got: 599%
+        Elapsed (wall clock) time (h:mm:ss or m:ss): 0:02.23
+        Average shared text size (kbytes): 0
+        Average unshared data size (kbytes): 0
+        Average stack size (kbytes): 0
+        Average total size (kbytes): 0
+        Maximum resident set size (kbytes): 780
+        Average resident set size (kbytes): 0
+        Major (requiring I/O) page faults: 0
+        Minor (reclaiming a frame) page faults: 243
+        Voluntary context switches: 10
+        Involuntary context switches: 87
+        Swaps: 0
+        File system inputs: 0
+        File system outputs: 8
+        Socket messages sent: 0
+        Socket messages received: 0
+        Signals delivered: 0
+        Page size (bytes): 4096
+        Exit status: 0
+
+Iterations: 499999997; threads: 7; pi: 3.141596; time: 13.39000
+        Command being timed: "./mc_par"
+        User time (seconds): 13.39
+        System time (seconds): 0.00
+        Percent of CPU this job got: 698%
+        Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.91
+        Average shared text size (kbytes): 0
+        Average unshared data size (kbytes): 0
+        Average stack size (kbytes): 0
+        Average total size (kbytes): 0
+        Maximum resident set size (kbytes): 796
+        Average resident set size (kbytes): 0
+        Major (requiring I/O) page faults: 0
+        Minor (reclaiming a frame) page faults: 246
+        Voluntary context switches: 11
+        Involuntary context switches: 65
+        Swaps: 0
+        File system inputs: 0
+        File system outputs: 8
+        Socket messages sent: 0
+        Socket messages received: 0
+        Signals delivered: 0
+        Page size (bytes): 4096
+        Exit status: 0
+
+
+Iterations: 500000000; threads: 8; pi: 3.141609; time: 13.39000
+        Command being timed: "./mc_par"
+        User time (seconds): 13.39
+        System time (seconds): 0.00
+        Percent of CPU this job got: 797%
+        Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.68
+        Average shared text size (kbytes): 0
+        Average unshared data size (kbytes): 0
+        Average stack size (kbytes): 0
+        Average total size (kbytes): 0
+        Maximum resident set size (kbytes): 804
+        Average resident set size (kbytes): 0
+        Major (requiring I/O) page faults: 0
+        Minor (reclaiming a frame) page faults: 249
+        Voluntary context switches: 13
+        Involuntary context switches    : 116
+        Swaps: 0
+        File system inputs: 0
+        File system outputs: 8
+        Socket messages sent: 0
+        Socket messages received: 0
+        Signals delivered: 0
+        Page size (bytes): 4096
+        Exit status: 0

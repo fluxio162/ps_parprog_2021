@@ -26,6 +26,5 @@ module load gcc/8.2.0
 
 #$ -l h_vmem=4G
 
-gcc -fopenmp ~/ParalleleProgrammierung/hadamard1.c -o hadamard1 && /usr/bin/time -v ./hadamard1
-gcc -fopenmp ~/ParalleleProgrammierung/hadamard2.c -o hadamard2 && /usr/bin/time -v ./hadamard2
-
+gcc -pthread ~/ParalleleProgrammierung/montecarlo/mc_seq.c -o mc_sq && /usr/bin/time -v ./mc_seq
+gcc -pthread ~/ParalleleProgrammierung/montecarlo/mc_par.c -o mc_par && /usr/bin/time -v ./mc_par
