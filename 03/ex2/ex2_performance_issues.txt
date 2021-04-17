@@ -1,0 +1,5 @@
+Concerning the performance of the given code: 
+- Firstly, using two loops to fill both matrices with random numbers
+    is not really in favor of performance. The complexity is O(n²).
+
+- Secondly,  the nested omp after stat_time dumps the performance of the entire code.
