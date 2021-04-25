@@ -66,19 +66,13 @@ void mergesort(int a[],int i,int j)
     {
         mid=(i+j)/2;
         
-        #pragma omp parallel sections 
-        {
-
-            #pragma omp section
-            {
+    
                 mergesort(a,i,mid);        //left recursion
-            }
+           
 
-            #pragma omp section
-            {
+     
                 mergesort(a,mid+1,j);    //right recursion
-            }
-        }
+    
 
         merge(a,i,mid,mid+1,j);    //merging of two sorted sub-arrays
     }

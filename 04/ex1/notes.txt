@@ -1,0 +1,21 @@
+Affinity (Übereinstimmung) OMP:
+
+Given the arrangement of node, sockets, and cores, with different access to RAM 
+and caches, we need to to make sure that our threads are located as close as 
+possible to their data, and as close as possible to each other if they need to work on the same piece of data. 
+
+
+OMP_PLACES: specifies hardware resources. The value can be either an abstract name describing a list of places
+or an explicit list of places. Choices are threads, cores, or sockets.
+
+    threads : Each place corresponds to a single hardware thread on the target  machine. 
+    cores : Each place corresponds to a single core (having one or more  hardware threads) on the target machine.
+    sockets : Each place corresponds to a single socket (consisting of one or  more cores) on the target machine.
+    A list with explicit place values: such as"{0,1,2,3},{4,5,6,7},{8,9,10,11},{12,13,14,15}” 
+
+OMP_PROC_BIND : controls how OpenMP threads are bound to resources.
+Values  for OMP_PROC_BIND include close, spread and master
+
+    spread: Bind threads as evenly distributed (spread) as possible
+    close: Bind threads close to the master thread while still distributing threads for load balancing, wrap around once each place receives one  thread
+    master : Bind threads the same place as the master thread

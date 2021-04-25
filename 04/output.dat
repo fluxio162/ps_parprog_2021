@@ -1,0 +1,20 @@
+  Loading gcc/8.2.0
+/usr/sge/lcc2/spool/n002/job_scripts/125228: line 28: cd: S4: No such file or directory
+/usr/sge/lcc2/spool/n002/job_scripts/125228: line 29: cd: ex3: No such file or directory
+gcc-8 -std=gnu11 -Wall -Wextra -pthread -fopenmp -lm -O3    merge_seq.c   -o merge_seq
+make: gcc-8: Command not found
+make: *** [merge_seq] Error 127
+sequential mergesort
+Threads: 1
+/usr/sge/lcc2/spool/n002/job_scripts/125228: line 33: ./merge_seq: No such file or directory
+Threads: 8
+/usr/sge/lcc2/spool/n002/job_scripts/125228: line 33: ./merge_seq: No such file or directory
+parallel mergesort
+Threads: 1
+/usr/sge/lcc2/spool/n002/job_scripts/125228: line 35: ./merge_par: No such file or directory
+Threads: 8
+/usr/sge/lcc2/spool/n002/job_scripts/125228: line 35: ./merge_par: No such file or directory
+make clean
+rm -f merge_seq merge_par
+module unload gcc/8.2.0
+  Unloading gcc/8.2.0

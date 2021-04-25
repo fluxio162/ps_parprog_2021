@@ -1,0 +1,44 @@
+OPENMP DISPLAY ENVIRONMENT BEGIN
+  _OPENMP = '201511'
+  OMP_DYNAMIC = 'FALSE'
+  OMP_NESTED = 'FALSE'
+  OMP_NUM_THREADS = '4'
+  OMP_SCHEDULE = 'DYNAMIC'
+  OMP_PROC_BIND = 'CLOSE'
+  OMP_PLACES = '{0},{1},{2},{3},{4},{5},{6},{7}'
+  OMP_STACKSIZE = '0'
+  OMP_WAIT_POLICY = 'PASSIVE'
+  OMP_THREAD_LIMIT = '4294967296'
+  OMP_MAX_ACTIVE_LEVELS = '2147483647'
+  OMP_CANCELLATION = 'FALSE'
+  OMP_DEFAULT_DEVICE = '0'
+  OMP_MAX_TASK_PRIORITY = '0'
+OPENMP DISPLAY ENVIRONMENT END
+
+Set Threads = 4, threads
+OMP_PROC_PLACES=cores
+OMP_PROC_BIND=close
+gcc -std=gnu11 -Wall -Wextra -pthread -fopenmp -lm -O3    ex1.c   -o ex1
+time elapsed: 4.022257 seconds, x = 500000000
+rm -f ex1
+
+Set Threads = 4, threads
+OMP_PROC_PLACES=cores
+OMP_PROC_BIND=close
+gcc -std=gnu11 -Wall -Wextra -pthread -fopenmp -lm -O3    ex1.c   -o ex1
+time elapsed: 4.021002 seconds, x = 500000000
+rm -f ex1
+
+Set Threads = 4, threads
+OMP_PROC_PLACES=cores
+OMP_PROC_BIND=close
+gcc -std=gnu11 -Wall -Wextra -pthread -fopenmp -lm -O3    ex1.c   -o ex1
+time elapsed: 4.021307 seconds, x = 500000000
+rm -f ex1
+
+Set Threads = 4, threads
+OMP_PROC_PLACES=cores
+OMP_PROC_BIND=close
+gcc -std=gnu11 -Wall -Wextra -pthread -fopenmp -lm -O3    ex1.c   -o ex1
+time elapsed: 4.021285 seconds, x = 500000000
+rm -f ex1
