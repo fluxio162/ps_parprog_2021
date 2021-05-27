@@ -1,0 +1,516 @@
+  Loading gcc/8.2.0
+analysis.c: In function ‘main’:
+analysis.c:5:27: warning: unused parameter ‘argv’ [-Wunused-parameter]
+ int main(int argc, char** argv) {
+                    ~~~~~~~^~~~
+
+Analyzing loop at analysis.c:27
+analysis.c:27:9: note: ===== analyze_loop_nest =====
+analysis.c:27:9: note: === vect_analyze_loop_form ===
+analysis.c:27:9: note: === get_loop_niters ===
+analysis.c:27:9: note: not vectorized: loop contains function calls or data references that cannot be analyzed
+
+Analyzing loop at analysis.c:22
+analysis.c:22:9: note: ===== analyze_loop_nest =====
+analysis.c:22:9: note: === vect_analyze_loop_form ===
+analysis.c:22:9: note: === get_loop_niters ===
+analysis.c:22:9: note: === vect_analyze_data_refs ===
+analysis.c:22:9: note: got vectype for stmt: _5 = a[_4];
+vector(4) int
+analysis.c:22:9: note: not vectorized: not suitable for gather load _5 = a[_4];
+analysis.c:22:9: note: bad data references.
+
+Analyzing loop at analysis.c:18
+analysis.c:18:9: note: ===== analyze_loop_nest =====
+analysis.c:18:9: note: === vect_analyze_loop_form ===
+analysis.c:18:9: note: === get_loop_niters ===
+analysis.c:18:9: note: === vect_analyze_data_refs ===
+analysis.c:18:9: note: got vectype for stmt: _3 = a[i_51];
+vector(4) int
+analysis.c:18:9: note: got vectype for stmt: a[_2] = _3;
+vector(4) int
+analysis.c:18:9: note: === vect_analyze_scalar_cycles ===
+analysis.c:18:9: note: Analyze phi: i_51 = PHI <4(11), i_25(15)>
+analysis.c:18:9: note: Access function of PHI: {4, +, 1}_3
+analysis.c:18:9: note: step: 1,  init: 4
+analysis.c:18:9: note: Detected induction.
+analysis.c:18:9: note: Analyze phi: .MEM_56 = PHI <.MEM_22(11), .MEM_24(15)>
+analysis.c:18:9: note: Analyze phi: ivtmp_12 = PHI <1020(11), ivtmp_11(15)>
+analysis.c:18:9: note: Access function of PHI: {1020, +, 4294967295}_3
+analysis.c:18:9: note: step: 4294967295,  init: 1020
+analysis.c:18:9: note: Detected induction.
+analysis.c:18:9: note: === vect_pattern_recog ===
+analysis.c:18:9: note: === vect_analyze_data_ref_accesses ===
+analysis.c:18:9: note: === vect_mark_stmts_to_be_vectorized ===
+analysis.c:18:9: note: init: phi relevant? i_51 = PHI <4(11), i_25(15)>
+analysis.c:18:9: note: init: phi relevant? .MEM_56 = PHI <.MEM_22(11), .MEM_24(15)>
+analysis.c:18:9: note: init: phi relevant? ivtmp_12 = PHI <1020(11), ivtmp_11(15)>
+analysis.c:18:9: note: init: stmt relevant? _2 = i_51 + -4;
+analysis.c:18:9: note: init: stmt relevant? _3 = a[i_51];
+analysis.c:18:9: note: init: stmt relevant? a[_2] = _3;
+analysis.c:18:9: note: vec_stmt_relevant_p: stmt has vdefs.
+analysis.c:18:9: note: mark relevant 5, live 0: a[_2] = _3;
+analysis.c:18:9: note: init: stmt relevant? i_25 = i_51 + 1;
+analysis.c:18:9: note: init: stmt relevant? ivtmp_11 = ivtmp_12 - 1;
+analysis.c:18:9: note: init: stmt relevant? if (ivtmp_11 != 0)
+analysis.c:18:9: note: worklist: examine stmt: a[_2] = _3;
+analysis.c:18:9: note: vect_is_simple_use: operand _3
+analysis.c:18:9: note: def_stmt: _3 = a[i_51];
+analysis.c:18:9: note: type of def: internal
+analysis.c:18:9: note: mark relevant 5, live 0: _3 = a[i_51];
+analysis.c:18:9: note: worklist: examine stmt: _3 = a[i_51];
+analysis.c:18:9: note: === vect_analyze_data_ref_dependences ===
+analysis.c:18:9: note: dependence distance  = 4.
+analysis.c:18:9: note: dependence distance negative.
+analysis.c:18:9: note: === vect_determine_vectorization_factor ===
+analysis.c:18:9: note: ==> examining phi: i_51 = PHI <4(11), i_25(15)>
+analysis.c:18:9: note: ==> examining phi: .MEM_56 = PHI <.MEM_22(11), .MEM_24(15)>
+analysis.c:18:9: note: ==> examining phi: ivtmp_12 = PHI <1020(11), ivtmp_11(15)>
+analysis.c:18:9: note: ==> examining statement: _2 = i_51 + -4;
+analysis.c:18:9: note: skip.
+analysis.c:18:9: note: ==> examining statement: _3 = a[i_51];
+analysis.c:18:9: note: get vectype for scalar type:  int
+analysis.c:18:9: note: vectype: vector(4) int
+analysis.c:18:9: note: nunits = 4
+analysis.c:18:9: note: ==> examining statement: a[_2] = _3;
+analysis.c:18:9: note: get vectype for scalar type:  int
+analysis.c:18:9: note: vectype: vector(4) int
+analysis.c:18:9: note: nunits = 4
+analysis.c:18:9: note: ==> examining statement: i_25 = i_51 + 1;
+analysis.c:18:9: note: skip.
+analysis.c:18:9: note: ==> examining statement: ivtmp_11 = ivtmp_12 - 1;
+analysis.c:18:9: note: skip.
+analysis.c:18:9: note: ==> examining statement: if (ivtmp_11 != 0)
+analysis.c:18:9: note: skip.
+analysis.c:18:9: note: vectorization factor = 4
+analysis.c:18:9: note: === vect_analyze_slp ===
+analysis.c:18:9: note: === vect_make_slp_decision ===
+analysis.c:18:9: note: vectorization_factor = 4, niters = 1020
+analysis.c:18:9: note: === vect_analyze_data_refs_alignment ===
+analysis.c:18:9: note: accesses have the same alignment: a[i_51] and a[_2]
+analysis.c:18:9: note: recording new base alignment for &a
+analysis.c:18:9: note:   alignment:    16
+analysis.c:18:9: note:   misalignment: 0
+analysis.c:18:9: note:   based on:     _3 = a[i_51];
+analysis.c:18:9: note: vect_compute_data_ref_alignment:
+analysis.c:18:9: note: misalign = 0 bytes of ref a[i_51]
+analysis.c:18:9: note: vect_compute_data_ref_alignment:
+analysis.c:18:9: note: misalign = 0 bytes of ref a[_2]
+analysis.c:18:9: note: === vect_prune_runtime_alias_test_list ===
+analysis.c:18:9: note: === vect_enhance_data_refs_alignment ===
+analysis.c:18:9: note: vect_can_advance_ivs_p:
+analysis.c:18:9: note: Analyze phi: i_51 = PHI <4(11), i_25(15)>
+analysis.c:18:9: note: Analyze phi: .MEM_56 = PHI <.MEM_22(11), .MEM_24(15)>
+analysis.c:18:9: note: reduc or virtual phi. skip.
+analysis.c:18:9: note: Analyze phi: ivtmp_12 = PHI <1020(11), ivtmp_11(15)>
+analysis.c:18:9: note: vect_model_load_cost: aligned.
+analysis.c:18:9: note: vect_get_data_access_cost: inside_cost = 12, outside_cost = 0.
+analysis.c:18:9: note: vect_model_store_cost: aligned.
+analysis.c:18:9: note: vect_get_data_access_cost: inside_cost = 24, outside_cost = 0.
+analysis.c:18:9: note: === vect_analyze_loop_operations ===
+analysis.c:18:9: note: examining phi: i_51 = PHI <4(11), i_25(15)>
+analysis.c:18:9: note: examining phi: .MEM_56 = PHI <.MEM_22(11), .MEM_24(15)>
+analysis.c:18:9: note: examining phi: ivtmp_12 = PHI <1020(11), ivtmp_11(15)>
+analysis.c:18:9: note: ==> examining statement: _2 = i_51 + -4;
+analysis.c:18:9: note: irrelevant.
+analysis.c:18:9: note: ==> examining statement: _3 = a[i_51];
+analysis.c:18:9: note: num. args = 4 (not unary/binary/ternary op).
+analysis.c:18:9: note: vect_is_simple_use: operand a[i_51]
+analysis.c:18:9: note: not ssa-name.
+analysis.c:18:9: note: use not simple.
+analysis.c:18:9: note: can't use a fully-masked loop because the target doesn't have the appropriate masked load or store.
+analysis.c:18:9: note: vect_model_load_cost: aligned.
+analysis.c:18:9: note: vect_model_load_cost: inside_cost = 12, prologue_cost = 0 .
+analysis.c:18:9: note: ==> examining statement: a[_2] = _3;
+analysis.c:18:9: note: vect_is_simple_use: operand _3
+analysis.c:18:9: note: def_stmt: _3 = a[i_51];
+analysis.c:18:9: note: type of def: internal
+analysis.c:18:9: note: vect_model_store_cost: aligned.
+analysis.c:18:9: note: vect_model_store_cost: inside_cost = 12, prologue_cost = 0 .
+analysis.c:18:9: note: ==> examining statement: i_25 = i_51 + 1;
+analysis.c:18:9: note: irrelevant.
+analysis.c:18:9: note: ==> examining statement: ivtmp_11 = ivtmp_12 - 1;
+analysis.c:18:9: note: irrelevant.
+analysis.c:18:9: note: ==> examining statement: if (ivtmp_11 != 0)
+analysis.c:18:9: note: irrelevant.
+analysis.c:18:9: note: not using a fully-masked loop.
+analysis.c:18:9: note: Cost model analysis: 
+  Vector inside of loop cost: 24
+  Vector prologue cost: 0
+  Vector epilogue cost: 0
+  Scalar iteration cost: 24
+  Scalar outside cost: 0
+  Vector outside cost: 0
+  prologue iterations: 0
+  epilogue iterations: 0
+  Calculated minimum iters for profitability: 0
+analysis.c:18:9: note:   Runtime profitability threshold = 4
+analysis.c:18:9: note:   Static estimate profitability threshold = 4
+analysis.c:18:9: note: loop vectorized
+analysis.c:18:9: note: === vec_transform_loop ===
+analysis.c:18:9: note: ------>vectorizing phi: i_51 = PHI <i_25(15), 4(18)>
+analysis.c:18:9: note: ------>vectorizing phi: .MEM_56 = PHI <.MEM_24(15), .MEM_22(18)>
+analysis.c:18:9: note: ------>vectorizing phi: ivtmp_12 = PHI <ivtmp_11(15), 1020(18)>
+analysis.c:18:9: note: ------>vectorizing statement: _2 = i_51 + -4;
+analysis.c:18:9: note: ------>vectorizing statement: _3 = a[i_51];
+analysis.c:18:9: note: transform statement.
+analysis.c:18:9: note: transform load. ncopies = 1
+analysis.c:18:9: note: create vector_type-pointer variable to type: vector(4) int  vectorizing an array ref: a
+analysis.c:18:9: note: created vectp_a.1_48
+analysis.c:18:9: note: add new stmt: vect__3.2_42 = MEM[(int *)vectp_a.0_46];
+analysis.c:18:9: note: ------>vectorizing statement: a[_2] = _3;
+analysis.c:18:9: note: transform statement.
+analysis.c:18:9: note: vect_is_simple_use: operand _3
+analysis.c:18:9: note: def_stmt: _3 = a[i_51];
+analysis.c:18:9: note: type of def: internal
+analysis.c:18:9: note: transform store. ncopies = 1
+analysis.c:18:9: note: vect_get_vec_def_for_operand: _3
+analysis.c:18:9: note: vect_is_simple_use: operand _3
+analysis.c:18:9: note: def_stmt: _3 = a[i_51];
+analysis.c:18:9: note: type of def: internal
+analysis.c:18:9: note:   def_stmt =  _3 = a[i_51];
+analysis.c:18:9: note: create vector_type-pointer variable to type: vector(4) int  vectorizing an array ref: a
+analysis.c:18:9: note: created &a
+analysis.c:18:9: note: add new stmt: MEM[(int *)vectp_a.3_40] = vect__3.2_42;
+analysis.c:18:9: note: ------>vectorizing statement: i_25 = i_51 + 1;
+analysis.c:18:9: note: ------>vectorizing statement: ivtmp_11 = ivtmp_12 - 1;
+analysis.c:18:9: note: ------>vectorizing statement: vectp_a.0_44 = vectp_a.0_46 + 16;
+analysis.c:18:9: note: ------>vectorizing statement: vectp_a.3_17 = vectp_a.3_40 + 16;
+analysis.c:18:9: note: ------>vectorizing statement: if (ivtmp_11 != 0)
+analysis.c:18:9: note: New loop exit condition: if (ivtmp_14 < 255)
+analysis.c:18:9: note: LOOP VECTORIZED
+
+
+Analyzing loop at analysis.c:14
+analysis.c:14:9: note: ===== analyze_loop_nest =====
+analysis.c:14:9: note: === vect_analyze_loop_form ===
+analysis.c:14:9: note: === get_loop_niters ===
+analysis.c:14:9: note: === vect_analyze_data_refs ===
+analysis.c:14:9: note: got vectype for stmt: _1 = a[i_50];
+vector(4) int
+analysis.c:14:9: note: got vectype for stmt: b[i_50] = _1;
+vector(4) int
+analysis.c:14:9: note: === vect_analyze_scalar_cycles ===
+analysis.c:14:9: note: Analyze phi: i_50 = PHI <0(12), i_23(16)>
+analysis.c:14:9: note: Access function of PHI: {0, +, 1}_2
+analysis.c:14:9: note: step: 1,  init: 0
+analysis.c:14:9: note: Detected induction.
+analysis.c:14:9: note: Analyze phi: .MEM_55 = PHI <.MEM_20(12), .MEM_22(16)>
+analysis.c:14:9: note: Analyze phi: ivtmp_10 = PHI <1024(12), ivtmp_9(16)>
+analysis.c:14:9: note: Access function of PHI: {1024, +, 4294967295}_2
+analysis.c:14:9: note: step: 4294967295,  init: 1024
+analysis.c:14:9: note: Detected induction.
+analysis.c:14:9: note: === vect_pattern_recog ===
+analysis.c:14:9: note: === vect_analyze_data_ref_accesses ===
+analysis.c:14:9: note: === vect_mark_stmts_to_be_vectorized ===
+analysis.c:14:9: note: init: phi relevant? i_50 = PHI <0(12), i_23(16)>
+analysis.c:14:9: note: init: phi relevant? .MEM_55 = PHI <.MEM_20(12), .MEM_22(16)>
+analysis.c:14:9: note: init: phi relevant? ivtmp_10 = PHI <1024(12), ivtmp_9(16)>
+analysis.c:14:9: note: init: stmt relevant? _1 = a[i_50];
+analysis.c:14:9: note: init: stmt relevant? b[i_50] = _1;
+analysis.c:14:9: note: vec_stmt_relevant_p: stmt has vdefs.
+analysis.c:14:9: note: mark relevant 5, live 0: b[i_50] = _1;
+analysis.c:14:9: note: init: stmt relevant? i_23 = i_50 + 1;
+analysis.c:14:9: note: init: stmt relevant? ivtmp_9 = ivtmp_10 - 1;
+analysis.c:14:9: note: init: stmt relevant? if (ivtmp_9 != 0)
+analysis.c:14:9: note: worklist: examine stmt: b[i_50] = _1;
+analysis.c:14:9: note: vect_is_simple_use: operand _1
+analysis.c:14:9: note: def_stmt: _1 = a[i_50];
+analysis.c:14:9: note: type of def: internal
+analysis.c:14:9: note: mark relevant 5, live 0: _1 = a[i_50];
+analysis.c:14:9: note: worklist: examine stmt: _1 = a[i_50];
+analysis.c:14:9: note: === vect_analyze_data_ref_dependences ===
+analysis.c:14:9: note: === vect_determine_vectorization_factor ===
+analysis.c:14:9: note: ==> examining phi: i_50 = PHI <0(12), i_23(16)>
+analysis.c:14:9: note: ==> examining phi: .MEM_55 = PHI <.MEM_20(12), .MEM_22(16)>
+analysis.c:14:9: note: ==> examining phi: ivtmp_10 = PHI <1024(12), ivtmp_9(16)>
+analysis.c:14:9: note: ==> examining statement: _1 = a[i_50];
+analysis.c:14:9: note: get vectype for scalar type:  int
+analysis.c:14:9: note: vectype: vector(4) int
+analysis.c:14:9: note: nunits = 4
+analysis.c:14:9: note: ==> examining statement: b[i_50] = _1;
+analysis.c:14:9: note: get vectype for scalar type:  int
+analysis.c:14:9: note: vectype: vector(4) int
+analysis.c:14:9: note: nunits = 4
+analysis.c:14:9: note: ==> examining statement: i_23 = i_50 + 1;
+analysis.c:14:9: note: skip.
+analysis.c:14:9: note: ==> examining statement: ivtmp_9 = ivtmp_10 - 1;
+analysis.c:14:9: note: skip.
+analysis.c:14:9: note: ==> examining statement: if (ivtmp_9 != 0)
+analysis.c:14:9: note: skip.
+analysis.c:14:9: note: vectorization factor = 4
+analysis.c:14:9: note: === vect_analyze_slp ===
+analysis.c:14:9: note: === vect_make_slp_decision ===
+analysis.c:14:9: note: vectorization_factor = 4, niters = 1024
+analysis.c:14:9: note: === vect_analyze_data_refs_alignment ===
+analysis.c:14:9: note: recording new base alignment for &a
+analysis.c:14:9: note:   alignment:    16
+analysis.c:14:9: note:   misalignment: 0
+analysis.c:14:9: note:   based on:     _1 = a[i_50];
+analysis.c:14:9: note: recording new base alignment for &b
+analysis.c:14:9: note:   alignment:    16
+analysis.c:14:9: note:   misalignment: 0
+analysis.c:14:9: note:   based on:     b[i_50] = _1;
+analysis.c:14:9: note: vect_compute_data_ref_alignment:
+analysis.c:14:9: note: misalign = 0 bytes of ref a[i_50]
+analysis.c:14:9: note: vect_compute_data_ref_alignment:
+analysis.c:14:9: note: misalign = 0 bytes of ref b[i_50]
+analysis.c:14:9: note: === vect_prune_runtime_alias_test_list ===
+analysis.c:14:9: note: === vect_enhance_data_refs_alignment ===
+analysis.c:14:9: note: vect_can_advance_ivs_p:
+analysis.c:14:9: note: Analyze phi: i_50 = PHI <0(12), i_23(16)>
+analysis.c:14:9: note: Analyze phi: .MEM_55 = PHI <.MEM_20(12), .MEM_22(16)>
+analysis.c:14:9: note: reduc or virtual phi. skip.
+analysis.c:14:9: note: Analyze phi: ivtmp_10 = PHI <1024(12), ivtmp_9(16)>
+analysis.c:14:9: note: vect_model_load_cost: aligned.
+analysis.c:14:9: note: vect_get_data_access_cost: inside_cost = 12, outside_cost = 0.
+analysis.c:14:9: note: vect_model_store_cost: aligned.
+analysis.c:14:9: note: vect_get_data_access_cost: inside_cost = 24, outside_cost = 0.
+analysis.c:14:9: note: === vect_analyze_loop_operations ===
+analysis.c:14:9: note: examining phi: i_50 = PHI <0(12), i_23(16)>
+analysis.c:14:9: note: examining phi: .MEM_55 = PHI <.MEM_20(12), .MEM_22(16)>
+analysis.c:14:9: note: examining phi: ivtmp_10 = PHI <1024(12), ivtmp_9(16)>
+analysis.c:14:9: note: ==> examining statement: _1 = a[i_50];
+analysis.c:14:9: note: num. args = 4 (not unary/binary/ternary op).
+analysis.c:14:9: note: vect_is_simple_use: operand a[i_50]
+analysis.c:14:9: note: not ssa-name.
+analysis.c:14:9: note: use not simple.
+analysis.c:14:9: note: can't use a fully-masked loop because the target doesn't have the appropriate masked load or store.
+analysis.c:14:9: note: vect_model_load_cost: aligned.
+analysis.c:14:9: note: vect_model_load_cost: inside_cost = 12, prologue_cost = 0 .
+analysis.c:14:9: note: ==> examining statement: b[i_50] = _1;
+analysis.c:14:9: note: vect_is_simple_use: operand _1
+analysis.c:14:9: note: def_stmt: _1 = a[i_50];
+analysis.c:14:9: note: type of def: internal
+analysis.c:14:9: note: vect_model_store_cost: aligned.
+analysis.c:14:9: note: vect_model_store_cost: inside_cost = 12, prologue_cost = 0 .
+analysis.c:14:9: note: ==> examining statement: i_23 = i_50 + 1;
+analysis.c:14:9: note: irrelevant.
+analysis.c:14:9: note: ==> examining statement: ivtmp_9 = ivtmp_10 - 1;
+analysis.c:14:9: note: irrelevant.
+analysis.c:14:9: note: ==> examining statement: if (ivtmp_9 != 0)
+analysis.c:14:9: note: irrelevant.
+analysis.c:14:9: note: not using a fully-masked loop.
+analysis.c:14:9: note: Cost model analysis: 
+  Vector inside of loop cost: 24
+  Vector prologue cost: 0
+  Vector epilogue cost: 0
+  Scalar iteration cost: 24
+  Scalar outside cost: 0
+  Vector outside cost: 0
+  prologue iterations: 0
+  epilogue iterations: 0
+  Calculated minimum iters for profitability: 0
+analysis.c:14:9: note:   Runtime profitability threshold = 4
+analysis.c:14:9: note:   Static estimate profitability threshold = 4
+analysis.c:14:9: note: loop vectorized
+analysis.c:14:9: note: === vec_transform_loop ===
+analysis.c:14:9: note: ------>vectorizing phi: i_50 = PHI <i_23(16), 0(19)>
+analysis.c:14:9: note: ------>vectorizing phi: .MEM_55 = PHI <.MEM_22(16), .MEM_20(19)>
+analysis.c:14:9: note: ------>vectorizing phi: ivtmp_10 = PHI <ivtmp_9(16), 1024(19)>
+analysis.c:14:9: note: ------>vectorizing statement: _1 = a[i_50];
+analysis.c:14:9: note: transform statement.
+analysis.c:14:9: note: transform load. ncopies = 1
+analysis.c:14:9: note: create vector_type-pointer variable to type: vector(4) int  vectorizing an array ref: a
+analysis.c:14:9: note: created &a
+analysis.c:14:9: note: add new stmt: vect__1.7_37 = MEM[(int *)vectp_a.5_13];
+analysis.c:14:9: note: ------>vectorizing statement: b[i_50] = _1;
+analysis.c:14:9: note: transform statement.
+analysis.c:14:9: note: vect_is_simple_use: operand _1
+analysis.c:14:9: note: def_stmt: _1 = a[i_50];
+analysis.c:14:9: note: type of def: internal
+analysis.c:14:9: note: transform store. ncopies = 1
+analysis.c:14:9: note: vect_get_vec_def_for_operand: _1
+analysis.c:14:9: note: vect_is_simple_use: operand _1
+analysis.c:14:9: note: def_stmt: _1 = a[i_50];
+analysis.c:14:9: note: type of def: internal
+analysis.c:14:9: note:   def_stmt =  _1 = a[i_50];
+analysis.c:14:9: note: create vector_type-pointer variable to type: vector(4) int  vectorizing an array ref: b
+analysis.c:14:9: note: created &b
+analysis.c:14:9: note: add new stmt: MEM[(int *)vectp_b.8_36] = vect__1.7_37;
+analysis.c:14:9: note: ------>vectorizing statement: i_23 = i_50 + 1;
+analysis.c:14:9: note: ------>vectorizing statement: ivtmp_9 = ivtmp_10 - 1;
+analysis.c:14:9: note: ------>vectorizing statement: vectp_a.5_38 = vectp_a.5_13 + 16;
+analysis.c:14:9: note: ------>vectorizing statement: vectp_b.8_35 = vectp_b.8_36 + 16;
+analysis.c:14:9: note: ------>vectorizing statement: if (ivtmp_9 != 0)
+analysis.c:14:9: note: New loop exit condition: if (ivtmp_60 < 256)
+analysis.c:14:9: note: LOOP VECTORIZED
+
+
+Analyzing loop at analysis.c:10
+analysis.c:10:9: note: ===== analyze_loop_nest =====
+analysis.c:10:9: note: === vect_analyze_loop_form ===
+analysis.c:10:9: note: === get_loop_niters ===
+analysis.c:10:9: note: === vect_analyze_data_refs ===
+analysis.c:10:9: note: got vectype for stmt: a[i_49] = argc_19(D);
+vector(4) int
+analysis.c:10:9: note: === vect_analyze_scalar_cycles ===
+analysis.c:10:9: note: Analyze phi: i_49 = PHI <0(2), i_21(17)>
+analysis.c:10:9: note: Access function of PHI: {0, +, 1}_1
+analysis.c:10:9: note: step: 1,  init: 0
+analysis.c:10:9: note: Detected induction.
+analysis.c:10:9: note: Analyze phi: .MEM_54 = PHI <.MEM_18(D)(2), .MEM_20(17)>
+analysis.c:10:9: note: Analyze phi: ivtmp_8 = PHI <1024(2), ivtmp_47(17)>
+analysis.c:10:9: note: Access function of PHI: {1024, +, 4294967295}_1
+analysis.c:10:9: note: step: 4294967295,  init: 1024
+analysis.c:10:9: note: Detected induction.
+analysis.c:10:9: note: === vect_pattern_recog ===
+analysis.c:10:9: note: === vect_analyze_data_ref_accesses ===
+analysis.c:10:9: note: === vect_mark_stmts_to_be_vectorized ===
+analysis.c:10:9: note: init: phi relevant? i_49 = PHI <0(2), i_21(17)>
+analysis.c:10:9: note: init: phi relevant? .MEM_54 = PHI <.MEM_18(D)(2), .MEM_20(17)>
+analysis.c:10:9: note: init: phi relevant? ivtmp_8 = PHI <1024(2), ivtmp_47(17)>
+analysis.c:10:9: note: init: stmt relevant? a[i_49] = argc_19(D);
+analysis.c:10:9: note: vec_stmt_relevant_p: stmt has vdefs.
+analysis.c:10:9: note: mark relevant 5, live 0: a[i_49] = argc_19(D);
+analysis.c:10:9: note: init: stmt relevant? i_21 = i_49 + 1;
+analysis.c:10:9: note: init: stmt relevant? ivtmp_47 = ivtmp_8 - 1;
+analysis.c:10:9: note: init: stmt relevant? if (ivtmp_47 != 0)
+analysis.c:10:9: note: worklist: examine stmt: a[i_49] = argc_19(D);
+analysis.c:10:9: note: vect_is_simple_use: operand argc_19(D)
+analysis.c:10:9: note: === vect_analyze_data_ref_dependences ===
+analysis.c:10:9: note: === vect_determine_vectorization_factor ===
+analysis.c:10:9: note: ==> examining phi: i_49 = PHI <0(2), i_21(17)>
+analysis.c:10:9: note: ==> examining phi: .MEM_54 = PHI <.MEM_18(D)(2), .MEM_20(17)>
+analysis.c:10:9: note: ==> examining phi: ivtmp_8 = PHI <1024(2), ivtmp_47(17)>
+analysis.c:10:9: note: ==> examining statement: a[i_49] = argc_19(D);
+analysis.c:10:9: note: get vectype for scalar type:  int
+analysis.c:10:9: note: vectype: vector(4) int
+analysis.c:10:9: note: nunits = 4
+analysis.c:10:9: note: ==> examining statement: i_21 = i_49 + 1;
+analysis.c:10:9: note: skip.
+analysis.c:10:9: note: ==> examining statement: ivtmp_47 = ivtmp_8 - 1;
+analysis.c:10:9: note: skip.
+analysis.c:10:9: note: ==> examining statement: if (ivtmp_47 != 0)
+analysis.c:10:9: note: skip.
+analysis.c:10:9: note: vectorization factor = 4
+analysis.c:10:9: note: === vect_analyze_slp ===
+analysis.c:10:9: note: === vect_make_slp_decision ===
+analysis.c:10:9: note: vectorization_factor = 4, niters = 1024
+analysis.c:10:9: note: === vect_analyze_data_refs_alignment ===
+analysis.c:10:9: note: recording new base alignment for &a
+analysis.c:10:9: note:   alignment:    16
+analysis.c:10:9: note:   misalignment: 0
+analysis.c:10:9: note:   based on:     a[i_49] = argc_19(D);
+analysis.c:10:9: note: vect_compute_data_ref_alignment:
+analysis.c:10:9: note: misalign = 0 bytes of ref a[i_49]
+analysis.c:10:9: note: === vect_prune_runtime_alias_test_list ===
+analysis.c:10:9: note: === vect_enhance_data_refs_alignment ===
+analysis.c:10:9: note: vect_can_advance_ivs_p:
+analysis.c:10:9: note: Analyze phi: i_49 = PHI <0(2), i_21(17)>
+analysis.c:10:9: note: Analyze phi: .MEM_54 = PHI <.MEM_18(D)(2), .MEM_20(17)>
+analysis.c:10:9: note: reduc or virtual phi. skip.
+analysis.c:10:9: note: Analyze phi: ivtmp_8 = PHI <1024(2), ivtmp_47(17)>
+analysis.c:10:9: note: vect_model_store_cost: aligned.
+analysis.c:10:9: note: vect_get_data_access_cost: inside_cost = 12, outside_cost = 0.
+analysis.c:10:9: note: === vect_analyze_loop_operations ===
+analysis.c:10:9: note: examining phi: i_49 = PHI <0(2), i_21(17)>
+analysis.c:10:9: note: examining phi: .MEM_54 = PHI <.MEM_18(D)(2), .MEM_20(17)>
+analysis.c:10:9: note: examining phi: ivtmp_8 = PHI <1024(2), ivtmp_47(17)>
+analysis.c:10:9: note: ==> examining statement: a[i_49] = argc_19(D);
+analysis.c:10:9: note: vect_is_simple_use: operand argc_19(D)
+analysis.c:10:9: note: can't use a fully-masked loop because the target doesn't have the appropriate masked load or store.
+analysis.c:10:9: note: vect_model_store_cost: aligned.
+analysis.c:10:9: note: vect_model_store_cost: inside_cost = 12, prologue_cost = 4 .
+analysis.c:10:9: note: ==> examining statement: i_21 = i_49 + 1;
+analysis.c:10:9: note: irrelevant.
+analysis.c:10:9: note: ==> examining statement: ivtmp_47 = ivtmp_8 - 1;
+analysis.c:10:9: note: irrelevant.
+analysis.c:10:9: note: ==> examining statement: if (ivtmp_47 != 0)
+analysis.c:10:9: note: irrelevant.
+analysis.c:10:9: note: not using a fully-masked loop.
+analysis.c:10:9: note: Cost model analysis: 
+  Vector inside of loop cost: 12
+  Vector prologue cost: 4
+  Vector epilogue cost: 0
+  Scalar iteration cost: 12
+  Scalar outside cost: 0
+  Vector outside cost: 4
+  prologue iterations: 0
+  epilogue iterations: 0
+  Calculated minimum iters for profitability: 1
+analysis.c:10:9: note:   Runtime profitability threshold = 4
+analysis.c:10:9: note:   Static estimate profitability threshold = 4
+analysis.c:10:9: note: loop vectorized
+analysis.c:10:9: note: === vec_transform_loop ===
+analysis.c:10:9: note: ------>vectorizing phi: i_49 = PHI <i_21(17), 0(20)>
+analysis.c:10:9: note: ------>vectorizing phi: .MEM_54 = PHI <.MEM_20(17), .MEM_18(D)(20)>
+analysis.c:10:9: note: ------>vectorizing phi: ivtmp_8 = PHI <ivtmp_47(17), 1024(20)>
+analysis.c:10:9: note: ------>vectorizing statement: a[i_49] = argc_19(D);
+analysis.c:10:9: note: transform statement.
+analysis.c:10:9: note: vect_is_simple_use: operand argc_19(D)
+analysis.c:10:9: note: transform store. ncopies = 1
+analysis.c:10:9: note: vect_get_vec_def_for_operand: argc_19(D)
+analysis.c:10:9: note: vect_is_simple_use: operand argc_19(D)
+analysis.c:10:9: note: created new init_stmt: vect_cst__61 = {argc_19(D), argc_19(D), argc_19(D), argc_19(D)};
+analysis.c:10:9: note: create vector_type-pointer variable to type: vector(4) int  vectorizing an array ref: a
+analysis.c:10:9: note: created &a
+analysis.c:10:9: note: add new stmt: MEM[(int *)vectp_a.10_62] = vect_cst__61;
+analysis.c:10:9: note: ------>vectorizing statement: i_21 = i_49 + 1;
+analysis.c:10:9: note: ------>vectorizing statement: ivtmp_47 = ivtmp_8 - 1;
+analysis.c:10:9: note: ------>vectorizing statement: vectp_a.10_63 = vectp_a.10_62 + 16;
+analysis.c:10:9: note: ------>vectorizing statement: if (ivtmp_47 != 0)
+analysis.c:10:9: note: New loop exit condition: if (ivtmp_66 < 256)
+analysis.c:10:9: note: LOOP VECTORIZED
+
+analysis.c:5:5: note: vectorized 3 loops in function.
+analysis.c:5:5: note: ===vect_slp_analyze_bb===
+analysis.c:5:5: note: === vect_analyze_data_refs ===
+analysis.c:5:5: note: not vectorized: not enough data-refs in basic block.
+analysis.c:5:5: note: ===vect_slp_analyze_bb===
+analysis.c:11:22: note: === vect_analyze_data_refs ===
+analysis.c:11:22: note: not vectorized: no vectype for stmt: MEM[(int *)vectp_a.10_62] = vect_cst__61;
+ scalar_type: vector(4) int
+analysis.c:11:22: note: not vectorized: not enough data-refs in basic block.
+analysis.c:11:22: note: ===vect_slp_analyze_bb===
+analysis.c:11:22: note: ===vect_slp_analyze_bb===
+analysis.c:11:22: note: ===vect_slp_analyze_bb===
+analysis.c:15:22: note: === vect_analyze_data_refs ===
+analysis.c:15:22: note: not vectorized: no vectype for stmt: vect__1.7_37 = MEM[(int *)vectp_a.5_13];
+ scalar_type: vector(4) int
+analysis.c:15:22: note: not vectorized: no vectype for stmt: MEM[(int *)vectp_b.8_36] = vect__1.7_37;
+ scalar_type: vector(4) int
+analysis.c:15:22: note: === vect_analyze_data_ref_accesses ===
+analysis.c:15:22: note: not vectorized: no grouped stores in basic block.
+analysis.c:15:22: note: ===vect_slp_analyze_bb===
+analysis.c:15:22: note: ===vect_slp_analyze_bb===
+analysis.c:15:22: note: === vect_analyze_data_refs ===
+analysis.c:15:22: note: not vectorized: not enough data-refs in basic block.
+analysis.c:15:22: note: ===vect_slp_analyze_bb===
+analysis.c:19:24: note: === vect_analyze_data_refs ===
+analysis.c:19:24: note: not vectorized: no vectype for stmt: vect__3.2_42 = MEM[(int *)vectp_a.0_46];
+ scalar_type: vector(4) int
+analysis.c:19:24: note: not vectorized: no vectype for stmt: MEM[(int *)vectp_a.3_40] = vect__3.2_42;
+ scalar_type: vector(4) int
+analysis.c:19:24: note: === vect_analyze_data_ref_accesses ===
+analysis.c:19:24: note: not vectorized: no grouped stores in basic block.
+analysis.c:19:24: note: ===vect_slp_analyze_bb===
+analysis.c:19:24: note: ===vect_slp_analyze_bb===
+analysis.c:19:24: note: ===vect_slp_analyze_bb===
+analysis.c:22:9: note: === vect_analyze_data_refs ===
+analysis.c:22:9: note: got vectype for stmt: _5 = a[_4];
+vector(4) int
+analysis.c:22:9: note: got vectype for stmt: a[i_52] = _5;
+vector(4) int
+analysis.c:22:9: note: === vect_analyze_data_ref_accesses ===
+analysis.c:22:9: note: not consecutive access _5 = a[_4];
+analysis.c:22:9: note: not consecutive access a[i_52] = _5;
+analysis.c:22:9: note: not vectorized: no grouped stores in basic block.
+analysis.c:22:9: note: ===vect_slp_analyze_bb===
+analysis.c:22:9: note: ===vect_slp_analyze_bb===
+analysis.c:22:9: note: ===vect_slp_analyze_bb===
+analysis.c:28:17: note: === vect_analyze_data_refs ===
+analysis.c:28:17: note: got vectype for stmt: _6 = a[i_53];
+vector(4) int
+analysis.c:28:17: note: not vectorized: not enough data-refs in basic block.
+analysis.c:29:17: note: === vect_analyze_data_refs ===
+analysis.c:29:17: note: got vectype for stmt: _7 = b[i_53];
+vector(4) int
+analysis.c:29:17: note: not vectorized: not enough data-refs in basic block.
+analysis.c:27:9: note: === vect_analyze_data_refs ===
+analysis.c:27:9: note: not vectorized: not enough data-refs in basic block.
+analysis.c:27:9: note: ===vect_slp_analyze_bb===
+analysis.c:27:9: note: ===vect_slp_analyze_bb===
+analysis.c:5:5: note: === vect_analyze_data_refs ===
+analysis.c:5:5: note: not vectorized: not enough data-refs in basic block.
+  Unloading gcc/8.2.0

@@ -1,0 +1,2 @@
+gcc -std=gnu11 -Wall -Wextra -O2 -ftree-vectorize -fopt-info-vec-all    analysis.c   -o analysis
+rm -f analysis
